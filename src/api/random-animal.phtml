@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dogs</title>
+</head>
+<body>
+<?php
+
+$imageSource = json_decode(file_get_contents("https://dog.ceo/api/breeds/image/random"), true);
+?>
+<img src="<?php echo $imageSource["message"]; ?>" alt="My Image">
+
+<form method="post">
+    <input type="submit" name="reload" value="Reload">
+</form>
+
+<?php
+if (isset($_POST['reload'])) {
+    echo "<p>$myString</p>";
+}
+?>
